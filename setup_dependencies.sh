@@ -26,27 +26,6 @@ else
     echo "GLFW already exists, skipping..."
 fi
 
-# Download GLAD
-echo "Setting up GLAD..."
-if [ ! -d "glad" ]; then
-    mkdir -p glad/include/glad
-    mkdir -p glad/include/KHR
-    mkdir -p glad/src
-    
-    # Download glad.h
-    curl -o glad/include/glad/glad.h https://raw.githubusercontent.com/Dav1dde/glad/master/include/glad/glad.h
-    
-    # Download khrplatform.h
-    curl -o glad/include/KHR/khrplatform.h https://raw.githubusercontent.com/Dav1dde/glad/master/include/KHR/khrplatform.h
-    
-    # Download glad.c
-    curl -o glad/src/glad.c https://raw.githubusercontent.com/Dav1dde/glad/master/src/glad.c
-    
-    echo "GLAD downloaded successfully"
-else
-    echo "GLAD already exists, skipping..."
-fi
-
 # Download nlohmann/json
 echo "Downloading nlohmann/json..."
 if [ ! -d "nlohmann" ]; then

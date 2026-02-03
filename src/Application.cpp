@@ -4,7 +4,7 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <chrono>
 
@@ -91,9 +91,10 @@ bool Application::initWindow() {
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
     
-    // Initialize GLAD
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        lastError = "Failed to initialize GLAD";
+    // Initialize GLEW
+    glewExperimental = GL_TRUE;
+    if (glewInit() != GLEW_OK) {
+        lastError = "Failed to initialize GLEW";
         Logger::getInstance().critical(lastError);
         return false;
     }

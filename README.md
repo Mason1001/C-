@@ -66,7 +66,6 @@ C-/
 ├── libs/                       # External libraries (auto-downloaded)
 │   ├── imgui/                  # Dear ImGui
 │   ├── glfw/                   # GLFW window library
-│   ├── glad/                   # OpenGL loader
 │   └── nlohmann/               # JSON library
 │
 └── assets/                     # Application assets
@@ -83,7 +82,7 @@ sudo apt-get update
 sudo apt-get install -y build-essential cmake git
 sudo apt-get install -y libgl1-mesa-dev libx11-dev libxrandr-dev
 sudo apt-get install -y libxinerama-dev libxcursor-dev libxi-dev
-sudo apt-get install -y libxext-dev libxtst-dev
+sudo apt-get install -y libxext-dev libxtst-dev libglew-dev
 ```
 
 #### Windows
@@ -264,7 +263,7 @@ This project is provided as-is for educational purposes.
 
 - **Dear ImGui**: [https://github.com/ocornut/imgui](https://github.com/ocornut/imgui)
 - **GLFW**: [https://www.glfw.org/](https://www.glfw.org/)
-- **GLAD**: [https://glad.dav1d.de/](https://glad.dav1d.de/)
+- **GLEW**: [http://glew.sourceforge.net/](http://glew.sourceforge.net/)
 - **nlohmann/json**: [https://github.com/nlohmann/json](https://github.com/nlohmann/json)
 
 ## Version History

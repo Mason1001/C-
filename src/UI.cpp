@@ -2,6 +2,9 @@
 #include "Logger.h"
 #include <cmath>
 
+// Forward declaration
+static void HelpMarker(const char* desc);
+
 UI::UI() 
     : currentTab(0), currentFPS(0.0f), closeRequested(false), 
       showError(false), settingsChanged(false) {

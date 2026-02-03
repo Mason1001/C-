@@ -15,6 +15,7 @@ endif()
 
 # Find packages
 find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
 
 # Include directories
 include_directories(
@@ -22,8 +23,8 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/libs/imgui
     ${PROJECT_SOURCE_DIR}/libs/imgui/backends
     ${PROJECT_SOURCE_DIR}/libs/nlohmann
-    ${PROJECT_SOURCE_DIR}/libs/glad/include
     ${PROJECT_SOURCE_DIR}/libs/glfw/include
+    ${GLEW_INCLUDE_DIRS}
 )
 
 # ImGui sources
@@ -34,11 +35,6 @@ set(IMGUI_SOURCES
     ${PROJECT_SOURCE_DIR}/libs/imgui/imgui_widgets.cpp
     ${PROJECT_SOURCE_DIR}/libs/imgui/backends/imgui_impl_glfw.cpp
     ${PROJECT_SOURCE_DIR}/libs/imgui/backends/imgui_impl_opengl3.cpp
-)
-
-# GLAD sources
-set(GLAD_SOURCES
-    ${PROJECT_SOURCE_DIR}/libs/glad/src/glad.c
 )
 
 # Application sources
@@ -59,12 +55,12 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/libs/glfw)
 add_executable(${PROJECT_NAME} 
     ${APP_SOURCES}
     ${IMGUI_SOURCES}
-    ${GLAD_SOURCES}
 )
 
 # Link libraries
 target_link_libraries(${PROJECT_NAME}
     OpenGL::GL
+    GLEW::GLEW
     glfw
 )
 
