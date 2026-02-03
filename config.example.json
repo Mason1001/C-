@@ -1,0 +1,25 @@
+{
+    "fov": {
+        "radius": 100.0,
+        "transparency": 0.5,
+        "enabled": true,
+        "color": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    "tracking": {
+        "enabled": false,
+        "strength": 0.5,
+        "smoothness": 0.7,
+        "targetDetectionMode": 0
+    },
+    "general": {
+        "darkMode": true,
+        "showFPS": true,
+        "showSplash": true,
+        "targetFPS": 60
+    }
+}
